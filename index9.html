@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+  <link rel="stylesheet" href="st.css">
+  <style>
+    #popup {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: gray;
+    opacity: 0.8;
+
+    }
+
+    #popup .header {
+      width: 70px;
+      margin: 30px auto 0 auto;
+    transform: translate(350px);
+    }
+
+    #popup .close {
+       color:red;
+    }
+
+    #popup .message {
+      width: 550px;
+      height: 450px;
+      background-color: #fff;
+      text-align:center;
+      margin: 20px auto;
+      opacity: 1;
+      border: 10px solid black;
+      padding: 80px;
+    }
+
+    #popup .message h2 {
+      color: red;
+      letter-spacing: 0;
+      margin-top: 50px;
+    }
+
+    #popup .message p {
+      color: red;
+    }
+
+
+    </style>
+    <title>popup</title>
+  </head>
+  <body>
+    <div id="popup">
+      <div class="header">
+       <a href="#" id="close">닫기 X</a>
+      </div>
+      <div class="message">
+        <h2>정기 점검중입니다.</h2>
+        <p>오전 3시부터 4시 사이에 서버 점검이 있습니다</p>
+      </div>
+    </div>
+   <div id="page">
+     <h1>LISTKING</h1>
+     <h2>로그인</h2>
+     <form class="" action="index.html" method="post">
+       <div id="feedback"></div>
+       <label for="username">사용자이름 :</label>
+       <input type="text" id="username">
+       <label for="pw">비밀번호 :</label>
+       <input type="password" id="pw">
+
+       <input type="submit" name="로그인" value="로그인">
+
+     </form>
+   </div>
+
+   <script>
+     var elNote = document.getElementById('popup');
+    function closePopup() {
+      document.body.removeChild(elNote);
+    }
+
+    var elClose = document.getElementById('close');
+    elClose.addEventListener('click', closePopup, false);
+    </script>
+  </body>
+</html>
